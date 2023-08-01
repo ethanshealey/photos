@@ -35,6 +35,14 @@ main {
             font-weight: 1000;
             margin-top: 25px;
         }
+        p {
+            font-weight: 200;
+            margin-top: 20px;
+            margin-left: 10px;
+            height: 100%;
+            border-left: 1px solid $text;
+            opacity: 60%;
+        }
     }
     #gallery {
         display: flex;
