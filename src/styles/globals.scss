@@ -139,6 +139,11 @@ main {
     animation: spin 1.5s linear infinite;
 }
 
+.ant-image-preview-mask {
+   background-color: #000 !important;
+   opacity: 85%;
+}
+
 @media (max-width: 450px) {
     .ant-image {
         width: 100% !important;
