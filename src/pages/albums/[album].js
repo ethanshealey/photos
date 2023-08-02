@@ -49,7 +49,7 @@ const Album = () => {
                 </a>
             </header>
             <div id='album-wrapper'>
-                {
+                {/* {
                     isLoading ? 
                         <div id='spinner-wrapper'>
                             <Spinner />
@@ -73,7 +73,7 @@ const Album = () => {
                                 }
                             </Swiper>
                         </>
-                }
+                } */}
                 <div className='gallery'>
                     <Image.PreviewGroup>
                         {
