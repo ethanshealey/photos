@@ -12,6 +12,8 @@ import 'swiper/css/zoom';
 
 import Spinner from '@/components/Spinner'
 
+import { Image } from 'antd';
+
 const Album = () => {
 
     const router = useRouter()
@@ -72,6 +74,15 @@ const Album = () => {
                             </Swiper>
                         </>
                 }
+                <div className='gallery'>
+                    <Image.PreviewGroup>
+                        {
+                            photos?.src?.map((photo) => (
+                                <Image src={photo} width={200} className='gallery-item' />
+                            ))
+                        }
+                    </Image.PreviewGroup>
+                </div>
             </div>
         </main>
     )

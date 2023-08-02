@@ -42,12 +42,15 @@ main {
             height: 100%;
             border-left: 1px solid $text;
             opacity: 60%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     #gallery {
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         .album {
@@ -85,6 +88,27 @@ main {
     }
 }
 
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+// .gallery-item {
+//     object-fit: cover !important;
+//     max-height: 150px !important;
+//     padding: 10px;
+// }
+
+.ant-image-img {
+    object-fit: cover !important;
+    height: 150px !important;
+}
+
 .photo {
     max-height: 75vh;
     max-width: 100vw;
@@ -112,6 +136,13 @@ main {
     border-top: 5px solid $background;
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
+}
+
+@media (max-width: 450px) {
+    .ant-image {
+        width: 100% !important;
+        max-height: none !important;
+    }
 }
 
 @-webkit-keyframes spin {
