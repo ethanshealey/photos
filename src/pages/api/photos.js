@@ -11,9 +11,8 @@ export default function handler(req, res) {
         const extractPhotos = (content) => {
           const links = []
           let match
-          while (match = regex.exec(content)) {
+          while (match = regex.exec(content)) 
             links.push(match[1])
-          } 
           return links
         }
         
