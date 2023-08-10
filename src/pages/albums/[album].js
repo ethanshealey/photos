@@ -26,7 +26,6 @@ const Album = () => {
         const { album } = router.query
         fetch(`/api/photos?album=https://photos.app.goo.gl/${album}`).then((res) => res.json()).then((data) => {
             if(data?.links.length) {
-                console.log(data)
                 setPhotos({ links: data.links, title: data.title })
                 setIsLoading(false)
             }

@@ -9,7 +9,6 @@ export default function Home() {
     fetch('/api/albums').then((res) => res.json()).then((data) => {
       data.forEach((album) => {
         fetch(`/api/photos?album=${album}`).then((res) => res.json()).then((data) => {
-          console.log(data)
           setAlbums((old) => [ ...old, data ])
         })
       })
