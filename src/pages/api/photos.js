@@ -16,7 +16,7 @@ export default function handler(req, res) {
           return links
         }
         
-        const links = extractPhotos(data).map((link) => 'https://images.weserv.nl/?url=http://i.etsh.me/' + link.split('/')[4] + '=w1024')
+        const links = extractPhotos(data).map((link) => 'https://lh3.googleusercontent.com/pw/' + link.split('/')[4] + '=w1024')
         const regex2 = /<title>.*<\/title>/g
         let title = regex2.exec(data)
         title = title[0].replace('<title>', '').replace(' - Google Photos</title>', '')
