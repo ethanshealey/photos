@@ -15,7 +15,7 @@ export default function handler(req, res) {
             links.push(match[1])
           return links
         }
-        
+
         const links = extractPhotos(data).map((link) => 'https://lh3.googleusercontent.com/pw/' + link.split('/')[4] + '=w1024')
         const regex2 = /<title>.*<\/title>/g
         let title = regex2.exec(data)
