@@ -25,5 +25,15 @@ export default function handler(req, res) {
         res.status(200).json({ links: [ ...new Set(links) ], thumb: links[0]?.replace('=w1024', '=w500'), title: title, id: id })
     })
 
+  // fetch('https://imgur.com/a/6qjwjKM')
+  //   .then((res) => res.text()).then((data) => {
+  //     const regex = /(https:\/\/i\.imgur\.com\/[a-zA-Z0-9]*\.jpg)/g
+  //     console.log(data)
+  //     const links = []
+  //     let match
+  //     while (match = regex.exec(data)) 
+  //       links.push(match[1])
+  //     console.log('links:', links)
+  //   })
  
 }
