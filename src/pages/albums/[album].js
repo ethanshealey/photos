@@ -52,7 +52,7 @@ const Album = () => {
                     <Image.PreviewGroup>
                         {
                             photos?.links?.map((photo) => (
-                                <Image src={photo} width={200} className='gallery-item' />
+                                <Image key={`${photo}`} src={photo} width={200} className='gallery-item' />
                             ))
                         }
                     </Image.PreviewGroup>

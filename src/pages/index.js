@@ -7,6 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch('/api/albums').then((res) => res.json()).then((data) => {
+      console.log(data)
       data.forEach((album) => {
         fetch(`/api/photos?album=${album}`).then((res) => res.json()).then((data) => {
           setAlbums((old) => [ ...old, data ])
@@ -37,7 +38,7 @@ export default function Home() {
         <div id="gallery">
           {
             albums.map((album) => (
-              <div className='album' onClick={() => openAlbum(album)}>
+              <div key={album.title} className='album' onClick={() => openAlbum(album)}>
                 <img src={album.thumb} referrerPolicy='no-referrer' className='album-thumbnail' />
                 <h3>{ album.title }</h3>
                 <p>{ album.links.length } item{ album.links.length !== 1 ? 's': '' }</p>
