@@ -28,17 +28,18 @@ html, body {
     display: flex;
     flex-direction: row;
     z-index: 999;
+    display: flex;
+    flex-direction: row;
     #header-title {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start !important;
+        align-items: center !important;
         cursor: pointer;
         #header-title-text {
             font-family: $font;
             font-weight: 1000;
             font-size: 25px;
-            margin-bottom: 12px;
             margin-left: 3px;
             transition: .5s;
             &:hover {
@@ -54,7 +55,7 @@ html, body {
             font-weight: 200;
             font-size: 20px;
             margin-left: 6px;
-            margin-bottom: -5px;
+            margin-bottom: -1px;
             border-left: thin solid $text;
             height: 15px;
             opacity: 60%;
@@ -84,12 +85,15 @@ html, body {
         padding: 10px; 
         cursor: pointer;
         transition: .5s;
+        text-wrap: wrap;
+        text-overflow: clip;
         .album-preview-title {
             font-family: $font;
             font-weight: 1000;
             text-decoration: underline;
             text-decoration-thickness: 4px;
             text-decoration-color: $accent;
+            opacity: 80%;
         }
         .album-preview-sub {
             font-family: $font;
@@ -99,7 +103,10 @@ html, body {
             font-size: 12px;
         }
         &:hover {
-            filter: brightness(75%)
+            filter: brightness(75%);
+            .album-preview-title {
+              opacity: 100%;
+            }
         }
     }
 }
@@ -119,7 +126,8 @@ html, body {
             flex-shrink: 0 !important;
             min-width: 100% !important;
             min-height: 100% !important;
-            object-fit: contain !important;
+            object-fit: cover !important;
+            
         }
     }
 }

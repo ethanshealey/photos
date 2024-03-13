@@ -22,7 +22,7 @@ const page = ({ params }: { params: { albumId: string } }) => {
     return (
         <div>
             <Header sub={album?.title} />
-            <br /><br /><br /><br />
+            <br /><br /><br />
             <div className="album-container">
                 {
                     isLoading ? 
