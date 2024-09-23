@@ -13,11 +13,16 @@ const page = ({ params }: { params: { albumId: string } }) => {
     useEffect(() => {
         setIsLoading(true)
         fetch(`/api/v1/album?id=${params.albumId}`).then((res) => res.json()).then((data) => {
-            setAlbum(data.albumInfo[0])
-            console.log(data)
+            processAlbum(data.albumInfo[0])
             setIsLoading(false)
         })
     }, [])
+
+    const processAlbum = (data: AlbumType) => {
+        let pics = Array.from(new Set(data.links).values())
+        data.links = pics
+        setAlbum(data)
+    }
 
     return (
         <div>
